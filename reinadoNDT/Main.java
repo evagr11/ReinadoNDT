@@ -31,7 +31,7 @@ public class Main {
         while (jugando) {
             mostrarMenu();
             int eleccion = sc.nextInt();
-
+            
             switch (eleccion) {
                 case 1: // Examen
                     int random = (int)(Math.random() * nombresProfesores.length);
@@ -47,16 +47,7 @@ public class Main {
 
                     int ataqueEnemigo = profesor.getDificultadExamen();
 
-                    if (ataqueEnemigo <= alumno.getDefensa()) {
-                        // Defensa bloquea el examen
-                        System.out.println("Tu defensa bloquea el examen. No pierdes energia!");
-                        int monedasGanadas = profesor.darMonedas();
-                        alumno.setMonedas(alumno.getMonedas() + monedasGanadas);
-                        System.out.println("Ganas " + monedasGanadas + " monedas.");
-                        alumno.subirNivel();
-                        System.out.println("Subes a nivel " + alumno.getNivel());
-                        System.out.println("Los examenes seran mas dificiles a partir de ahora...");
-                    } else if (alumno.getConocimiento() >= ataqueEnemigo) {
+                    if (alumno.getConocimiento() >= ataqueEnemigo) {
                         // Apruebas por conocimiento
                         System.out.println("Has aprobado gracias a tu conocimiento.");
                         int monedasGanadas = profesor.darMonedas();
@@ -67,14 +58,14 @@ public class Main {
                         System.out.println("Los examenes seran mas dificiles a partir de ahora...");
 
                         // Jefe final
-                    if (alumno.getNivel() >= 5) {
-                        System.out.println("\nHas alcanzado el nivel 5!");
-                        System.out.println("El Director te espera con el examen final...");
-                        System.out.println("Quieres enfrentarte ahora o seguir preparandote?");
-                        System.out.println("1. Enfrentarse al Director");
-                        System.out.println("2. Seguir preparandome");
+                        if (alumno.getNivel() >= 5) {
+                            System.out.println("\nHas alcanzado el nivel 5!");
+                            System.out.println("El Director te espera con el examen final...");
+                            System.out.println("Quieres enfrentarte ahora o seguir preparandote?");
+                            System.out.println("1. Enfrentarse al Director");
+                            System.out.println("2. Seguir preparandome");
 
-                        int decision = sc.nextInt();
+                            int decision = sc.nextInt();
 
                             if (decision == 1) {
                                 Profesor jefeFinal = new Profesor("JEFE FINAL - Director");
@@ -84,20 +75,27 @@ public class Main {
 
                                 int ataqueJefe = jefeFinal.getDificultadExamen();
 
-                                if (ataqueJefe <= alumno.getDefensa()) {
-                                    System.out.println("Tu defensa bloquea el examen final. No pierdes energia!");
-                                    System.out.println("Has derrotado al Director y superado el curso!");
-                                    jugando = false;
-                                } else if (alumno.getConocimiento() >= ataqueJefe) {
+                                if (alumno.getConocimiento() >= ataqueJefe) {
                                     System.out.println("Has aprobado el examen final gracias a tu conocimiento.");
                                     System.out.println("Has derrotado al Director y superado el curso!");
                                     jugando = false;
                                 } else {
-                                    int daño = ataqueJefe - alumno.getDefensa() - alumno.getConocimiento();
-                                    if (daño < 1) daño = 1;
-                                    alumno.setEnergia(alumno.getEnergia() - daño);
-                                    System.out.println("Has suspendido el examen final... pierdes " + daño + " puntos de energia.");
+                                    int dañoBase = ataqueJefe;
+                                    int reduccion = alumno.getDefensa();
+                                    int dañoFinal = dañoBase - reduccion;
+                                    if (dañoFinal < 1) dañoFinal = 1;
+
+                                    alumno.setEnergia(alumno.getEnergia() - dañoFinal);
+                                    if (reduccion > 0) {
+                                        System.out.println("El examen iba a quitarte " + dañoBase +
+                                                           " puntos de energia, pero gracias a tu defensa (" + reduccion +
+                                                           ") solo pierdes " + dañoFinal + ".");
+                                    } else {
+                                        System.out.println("Has suspendido el examen final... pierdes " + dañoFinal + " puntos de energia.");
+                                    }
+                                    
                                     System.out.println("Barra de energia: " + alumno.mostrarBarraEnergia());
+
                                     if (alumno.getEnergia() <= 0) {
                                         System.out.println("Tu energia ha llegado a 0. El Director te ha derrotado...");
                                     } else {
@@ -108,20 +106,30 @@ public class Main {
                             } else {
                                 System.out.println("\nDecides esperar y seguir preparándote antes de enfrentarte al Director.");
                             }
-                        } 
+                        }
                     } else {
-                        // Suspendes
-                        int daño = ataqueEnemigo - alumno.getDefensa() - alumno.getConocimiento();
-                        if (daño < 1) daño = 1;
-                        alumno.setEnergia(alumno.getEnergia() - daño);
-                        System.out.println("Has suspendido... pierdes " + daño + " puntos de energia.");
+                        int dañoBase = ataqueEnemigo;
+                        int reduccion = alumno.getDefensa();
+                        int dañoFinal = dañoBase - reduccion;
+                        if (dañoFinal < 1) dañoFinal = 1;
+
+                        alumno.setEnergia(alumno.getEnergia() - dañoFinal);
+                        if (reduccion > 0) {
+                            System.out.println("El examen iba a quitarte " + dañoBase +
+                                               " puntos de energia, pero gracias a tu defensa (" + reduccion +
+                                               ") solo pierdes " + dañoFinal + ".");
+                        } else {
+                            System.out.println("Has suspendido... pierdes " + dañoFinal + " puntos de energia.");
+                        }
                         System.out.println("Barra de energia: " + alumno.mostrarBarraEnergia());
+
                         if (alumno.getEnergia() <= 0) {
                             System.out.println("Tu energia ha llegado a 0. Has perdido el curso!");
                             jugando = false;
                         }
                     }
                     break;
+
 
                 case 2: // Tienda
                     realizarCompra(sc, alumno);
@@ -210,10 +218,10 @@ public class Main {
         System.out.println("para ello tendras que mejorar tus conocimientos y tu defensa,");
         System.out.println("y reunir suficientes monedas para prepararte.");
         System.out.println();
-        System.out.println("Cada profesor te pondra un examen con dificultad aleatoria.");
-        System.out.println("- Si tu DEFENSA es mayor o igual, bloqueas el examen.");
+        System.out.println("Cada profesor te pondrá un examen con dificultad aleatoria.");
         System.out.println("- Si tu CONOCIMIENTO es mayor o igual, apruebas.");
-        System.out.println("- Si fallas, perderas ENERGIA.");
+        System.out.println("- Si fallas, perderás ENERGIA.");
+        System.out.println("- Tu DEFENSA reduce la cantidad de energía perdida en los suspensos.");
         System.out.println();
         System.out.println("Puedes gastar monedas en la TIENDA para mejorar:");
         System.out.println("  Conocimiento, Energia o Defensa.");
