@@ -48,7 +48,6 @@ public class Main {
                     int ataqueEnemigo = profesor.getDificultadExamen();
 
                     if (alumno.getConocimiento() >= ataqueEnemigo) {
-                        // Apruebas por conocimiento
                         System.out.println("Has aprobado gracias a tu conocimiento.");
                         int monedasGanadas = profesor.darMonedas();
                         alumno.setMonedas(alumno.getMonedas() + monedasGanadas);
@@ -218,10 +217,10 @@ public class Main {
         System.out.println("para ello tendras que mejorar tus conocimientos y tu defensa,");
         System.out.println("y reunir suficientes monedas para prepararte.");
         System.out.println();
-        System.out.println("Cada profesor te pondrá un examen con dificultad aleatoria.");
+        System.out.println("Cada profesor te pondra un examen con dificultad aleatoria.");
         System.out.println("- Si tu CONOCIMIENTO es mayor o igual, apruebas.");
-        System.out.println("- Si fallas, perderás ENERGIA.");
-        System.out.println("- Tu DEFENSA reduce la cantidad de energía perdida en los suspensos.");
+        System.out.println("- Si fallas, perderas ENERGIA.");
+        System.out.println("- Tu DEFENSA reduce la cantidad de energia perdida en los suspensos.");
         System.out.println();
         System.out.println("Puedes gastar monedas en la TIENDA para mejorar:");
         System.out.println("  Conocimiento, Energia o Defensa.");
