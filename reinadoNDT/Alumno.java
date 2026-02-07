@@ -6,7 +6,7 @@ package reinadondt;
  * que determinan su capacidad para superar exámenes y progresar en el juego.
  *
  * @author Eva Gallardo Romero
- * @version 1.0
+ * @version 1.1
  */
 public class Alumno {
     private String nombre;
@@ -158,5 +158,4 @@ public class Alumno {
      */
     public void subirNivel() { this.nivel++; }
 }
-
 

@@ -9,7 +9,7 @@ import java.util.Scanner;
  * y enfrentarse al Director como jefe final.
  *
  * @author Eva Gallardo Romero
- * @version 1.0
+ * @version 1.1
  */
 public class Main {
 
@@ -43,7 +43,7 @@ public class Main {
                     System.out.println("\n" + alumno);
                     System.out.println("\nDificultad del examen: " + profesor.getDificultadExamen() + "\n");
 
-                    animacionExamen();
+                    animacionExamenRecursiva(0);
 
                     int ataqueEnemigo = profesor.getDificultadExamen();
 
@@ -70,7 +70,7 @@ public class Main {
                                 Profesor jefeFinal = new Profesor("JEFE FINAL - Director");
                                 jefeFinal.setDificultadExamen(20);
                                 System.out.println("\nTe enfrentas al examen final del Director.");
-                                animacionExamen();
+                                animacionExamenRecursiva(0);
 
                                 int ataqueJefe = jefeFinal.getDificultadExamen();
 
@@ -177,23 +177,31 @@ public class Main {
     }
 
     /**
-     * Simula una animación de examen en la consola,
-     * mostrando puntos suspensivos y pausas para dar sensación de progreso.
+     * Muestra una animación de examen utilizando recursividad
+     * 
+     * @param paso Número de iteración actual de la animación
      */
-    public static void animacionExamen() {
-        try {
-            for (int i = 0; i <= 3; i++) {
-                StringBuilder animacion = new StringBuilder("Escribiendo respuestas");
-                for (int j = 0; j < i; j++) animacion.append(".");
-                for (int j = i; j < 3; j++) animacion.append(" ");
-                System.out.println(animacion.toString());
-                Thread.sleep(500);
-            }
+    public static void animacionExamenRecursiva(int paso) {
+        if (paso > 3) {
             System.out.println("Entrega del examen!\n");
+            return;
+        }
+
+        StringBuilder animacion = new StringBuilder("Escribiendo respuestas");
+        for (int j = 0; j < paso; j++) animacion.append(".");
+        for (int j = paso; j < 3; j++) animacion.append(" ");
+
+        System.out.println(animacion.toString());
+
+        try {
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             System.out.println("Error en la animación.");
         }
+
+        animacionExamenRecursiva(paso + 1);
     }
+
 
     /**
      * Inicia el juego mostrando la introducción y solicitando el nombre del alumno.
@@ -217,10 +225,10 @@ public class Main {
         System.out.println("para ello tendras que mejorar tus conocimientos y tu defensa,");
         System.out.println("y reunir suficientes monedas para prepararte.");
         System.out.println();
-        System.out.println("Cada profesor te pondra un examen con dificultad aleatoria.");
+        System.out.println("Cada profesor te pondrá un examen con dificultad aleatoria.");
         System.out.println("- Si tu CONOCIMIENTO es mayor o igual, apruebas.");
-        System.out.println("- Si fallas, perderas ENERGIA.");
-        System.out.println("- Tu DEFENSA reduce la cantidad de energia perdida en los suspensos.");
+        System.out.println("- Si fallas, perderás ENERGIA.");
+        System.out.println("- Tu DEFENSA reduce la cantidad de energía perdida en los suspensos.");
         System.out.println();
         System.out.println("Puedes gastar monedas en la TIENDA para mejorar:");
         System.out.println("  Conocimiento, Energia o Defensa.");

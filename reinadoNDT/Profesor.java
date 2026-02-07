@@ -6,7 +6,7 @@ package reinadondt;
  * y otorgar monedas al alumno en caso de superar la prueba.
  *
  * @author Eva Gallardo Romero
- * @version 1.0
+ * @version 1.1
  */
 public class Profesor {
     private String nombre;
@@ -62,5 +62,4 @@ public class Profesor {
         return (int)(Math.random() * 3) + 1;
     }
 }
-
 
