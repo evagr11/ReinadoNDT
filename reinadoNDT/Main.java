@@ -103,7 +103,7 @@ public class Main {
                                     jugando = false;
                                 }
                             } else {
-                                System.out.println("\nDecides esperar y seguir preparándote antes de enfrentarte al Director.");
+                                System.out.println("\nDecides esperar y seguir preparandote antes de enfrentarte al Director.");
                             }
                         }
                     } else {
@@ -196,7 +196,7 @@ public class Main {
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
-            System.out.println("Error en la animación.");
+            System.out.println("Error en la animacion.");
         }
 
         animacionExamenRecursiva(paso + 1);
@@ -220,15 +220,15 @@ public class Main {
         System.out.println("                                                      ");
         System.out.println("                  AL CURSO EN NDT                     ");
         System.out.println("======================================================");
-        System.out.println("Eres un alumno que acaba de comenzar el de DAM.");
-        System.out.println("Tu objetivo pasar el curso escolar, sobreviviendo a examenes");
+        System.out.println("Eres un alumno que acaba de comenzar el curso de DAM.");
+        System.out.println("Tu objetivo es pasar el curso escolar, sobreviviendo a examenes");
         System.out.println("para ello tendras que mejorar tus conocimientos y tu defensa,");
         System.out.println("y reunir suficientes monedas para prepararte.");
         System.out.println();
-        System.out.println("Cada profesor te pondrá un examen con dificultad aleatoria.");
+        System.out.println("Cada profesor te pondra un examen con dificultad aleatoria.");
         System.out.println("- Si tu CONOCIMIENTO es mayor o igual, apruebas.");
-        System.out.println("- Si fallas, perderás ENERGIA.");
-        System.out.println("- Tu DEFENSA reduce la cantidad de energía perdida en los suspensos.");
+        System.out.println("- Si fallas, perderas ENERGIA.");
+        System.out.println("- Tu DEFENSA reduce la cantidad de energia perdida en los suspensos.");
         System.out.println();
         System.out.println("Puedes gastar monedas en la TIENDA para mejorar:");
         System.out.println("  Conocimiento, Energia o Defensa.");
@@ -273,21 +273,21 @@ public class Main {
             case 1: // Chuleta
                 if (alumno.getMonedas() >= 2) {
                     alumno.setMonedas(alumno.getMonedas() - 2);
-                    alumno.setConocimiento(alumno.getConocimiento() + 3);
+                    new MejoraSimple(TipoMejora.CONOCIMIENTO, 3).aplicarMejora(alumno);
                     System.out.println("\nHas conseguido una chuleta (+3 conocimiento).");
                 } else System.out.println("\nNo tienes suficientes monedas.");
                 break;
             case 2: // Estudiar
                 if (alumno.getMonedas() >= 3) {
                     alumno.setMonedas(alumno.getMonedas() - 3);
-                    alumno.setConocimiento(alumno.getConocimiento() + 5);
+                    new MejoraSimple(TipoMejora.CONOCIMIENTO, 5).aplicarMejora(alumno);
                     System.out.println("\nHas estudiado duro (+5 conocimiento).");
                 } else System.out.println("\nNo tienes suficientes monedas.");
                 break;
             case 3: // Ayuda de compañero
                 if (alumno.getMonedas() >= 1) {
                     alumno.setMonedas(alumno.getMonedas() - 1);
-                    alumno.setConocimiento(alumno.getConocimiento() + 2);
+                    new MejoraSimple(TipoMejora.CONOCIMIENTO, 2).aplicarMejora(alumno);
                     System.out.println("\nUn companero te ayuda (+2 conocimiento).");
                 } else System.out.println("\nNo tienes suficientes monedas.");
 
@@ -295,21 +295,21 @@ public class Main {
             case 4: // Bebida energética
                 if (alumno.getMonedas() >= 2) {
                     alumno.setMonedas(alumno.getMonedas() - 2);
-                    alumno.setEnergia(alumno.getEnergia() + 5);
+                    new MejoraSimple(TipoMejora.ENERGIA, 5).aplicarMejora(alumno);
                     System.out.println("\nHas tomado una bebida energetica (+5 energia).");
                 } else System.out.println("\nNo tienes suficientes monedas.");
                 break;
             case 5: // Cafe
                 if (alumno.getMonedas() >= 1) {
                     alumno.setMonedas(alumno.getMonedas() - 1);
-                    alumno.setEnergia(alumno.getEnergia() + 3);
+                    new MejoraSimple(TipoMejora.ENERGIA, 3).aplicarMejora(alumno);
                     System.out.println("\nHas tomado un cafe (+3 energia).");
                 } else System.out.println("\nNo tienes suficientes monedas.");
                 break;
             case 6: // Apuntes organizados
                 if (alumno.getMonedas() >= 2) {
                     alumno.setMonedas(alumno.getMonedas() - 2);
-                    alumno.setDefensa(alumno.getDefensa() + 2);
+                    new MejoraSimple(TipoMejora.DEFENSA, 2).aplicarMejora(alumno);
                     System.out.println("\nHas conseguido apuntes organizados (+2 defensa).");
                 } else System.out.println("\nNo tienes suficientes monedas.");
                 break;
