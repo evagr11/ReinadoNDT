@@ -5,6 +5,7 @@
 <div align="center">
   <a href="https://github.com/evagr11/ReinadoNDT" target="_blank"><img src="https://img.shields.io/badge/Ver_Código-1E1B4B?style=for-the-badge&logo=github&logoColor=white" alt="Ver Código"></a>
   <a href="https://evagr11.github.io/ReinadoNDT/javadoc/" target="_blank"><img src="https://img.shields.io/badge/Javadoc-6366F1?style=for-the-badge&logo=openjdk&logoColor=white" alt="Javadoc"></a>
+  <a href="docs/Documentacion_ReinadoNDT.pdf" target="_blank"><img src="https://img.shields.io/badge/Documentación-1E1B4B?style=for-the-badge&logo=latex&logoColor=white" alt="Documentación"></a>
   <a href="#cómo-utilizar-el-proyecto"><img src="https://img.shields.io/badge/Cómo_Jugar-6366F1?style=for-the-badge&logo=openjdk&logoColor=white" alt="Cómo Jugar"></a>
 </div>
 
