@@ -5,28 +5,28 @@
 <div align="center">
   <a href="https://github.com/evagr11/ReinadoNDT" target="_blank"><img src="https://img.shields.io/badge/Ver_Código-1E1B4B?style=for-the-badge&logo=github&logoColor=white" alt="Ver Código"></a>
   <a href="https://evagr11.github.io/ReinadoNDT/javadoc/" target="_blank"><img src="https://img.shields.io/badge/Javadoc-6366F1?style=for-the-badge&logo=openjdk&logoColor=white" alt="Javadoc"></a>
-  <a href="#-cómo-utilizar-el-proyecto"><img src="https://img.shields.io/badge/Cómo_Jugar-6366F1?style=for-the-badge&logo=openjdk&logoColor=white" alt="Cómo Jugar"></a>
+  <a href="#cómo-utilizar-el-proyecto"><img src="https://img.shields.io/badge/Cómo_Jugar-6366F1?style=for-the-badge&logo=openjdk&logoColor=white" alt="Cómo Jugar"></a>
 </div>
 
 <div align="center">
   <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&size=18&duration=3500&pause=800&color=6366F1&center=true&vCenter=true&width=600&lines=RPG+por+consola+en+Java%3BExamenes+en+lugar+de+dragones%3BTienda+de+mejoras+con+monedas%3BJefe+final%3A+el+Director%3BSin+dependencias+externas" alt="Typing SVG" /></a>
 </div>
 
-# 🚀 Sobre el Proyecto
+# Sobre el Proyecto
 
 **Reinado NDT** es un juego de rol de texto hecho en Java en el que eres un alumno que tiene que sobrevivir al curso. En lugar de dragones, tus enemigos son los **exámenes de los profesores**: apruébalos para ganar monedas y subir de nivel, gasta las monedas en la tienda para prepararte y, al llegar al nivel 5, enfréntate al **examen final del Director**.
 
-✨ **Características principales:**
+**Características principales:**
 
-*   📝 **Exámenes aleatorios:** Cada vez te examina un profesor al azar con una dificultad del 1 al 15. Si tu **conocimiento** es mayor o igual, apruebas; si no, pierdes **energía**.
-*   🛡️ **Defensa:** Reduce la energía que pierdes en cada suspenso.
-*   🛒 **Tienda de mejoras:** Seis objetos para subir conocimiento, energía o defensa a cambio de monedas.
-*   🎲 **Comienzo aleatorio:** Empiezas con un conocimiento entre 1 y 10 y puedes pagar 1 moneda para volver a tirar.
-*   🏆 **Jefe final:** Al llegar al nivel 5 puedes enfrentarte al Director (dificultad 20) o seguir preparándote.
-*   🔋 **Barra de energía:** Se dibuja con caracteres en la consola; si llega a 0, pierdes el curso.
-*   ✍️ **Animación de examen:** Los puntos suspensivos de "Escribiendo respuestas…" se generan con un método **recursivo**.
+*   **Exámenes aleatorios:** Cada vez te examina un profesor al azar con una dificultad del 1 al 15. Si tu **conocimiento** es mayor o igual, apruebas; si no, pierdes **energía**.
+*   **Defensa:** Reduce la energía que pierdes en cada suspenso.
+*   **Tienda de mejoras:** Seis objetos para subir conocimiento, energía o defensa a cambio de monedas.
+*   **Comienzo aleatorio:** Empiezas con un conocimiento entre 1 y 10 y puedes pagar 1 moneda para volver a tirar.
+*   **Jefe final:** Al llegar al nivel 5 puedes enfrentarte al Director (dificultad 20) o seguir preparándote.
+*   **Barra de energía:** Se dibuja con caracteres en la consola; si llega a 0, pierdes el curso.
+*   **Animación de examen:** Los puntos suspensivos de "Escribiendo respuestas…" se generan con un método **recursivo**.
 
-### 🖥️ Así se ve una partida
+### Así se ve una partida
 
 ```text
 Introduce tu nombre: Eva
@@ -53,24 +53,24 @@ Ganas 2 monedas.
 Subes a nivel 2
 ```
 
-### 🛒 Tienda
+### Tienda
 
 <div align="center">
 
 | Objeto | Efecto | Precio |
 | :----- | :----- | :----: |
-| Chuleta | +3 conocimiento | 2 🪙 |
-| Estudiar | +5 conocimiento | 3 🪙 |
-| Pedir ayuda a un compañero | +2 conocimiento | 1 🪙 |
-| Bebida energética | +5 energía | 2 🪙 |
-| Café | +3 energía | 1 🪙 |
-| Apuntes organizados | +2 defensa | 2 🪙 |
+| Chuleta | +3 conocimiento | 2 |
+| Estudiar | +5 conocimiento | 3 |
+| Pedir ayuda a un compañero | +2 conocimiento | 1 |
+| Bebida energética | +5 energía | 2 |
+| Café | +3 energía | 1 |
+| Apuntes organizados | +2 defensa | 2 |
 
 </div>
 
 Empiezas con **20 de energía** (es también el máximo), **2 monedas** y **0 de defensa**. Cada examen aprobado da entre 1 y 3 monedas y un nivel.
 
-# 🧠 Contexto del Proyecto
+# Contexto del Proyecto
 
 Fue una práctica del módulo de **Programación** del ciclo de **Desarrollo de Aplicaciones Multiplataforma (DAM)** en **New Digital Talent**, de ahí el *NDT* del nombre y de los profesores del juego. El objetivo era aplicar la **programación orientada a objetos** en una aplicación de consola completa:
 
@@ -87,7 +87,7 @@ Fue una práctica del módulo de **Programación** del ciclo de **Desarrollo de 
 
 </div>
 
-# 🛠️ Stack Tecnológico
+# Stack Tecnológico
 
 <div align="center">
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
@@ -108,7 +108,7 @@ Fue una práctica del módulo de **Programación** del ciclo de **Desarrollo de 
 
 </div>
 
-# 📂 Estructura del Proyecto
+# Estructura del Proyecto
 
 ```bash
 ReinadoNDT/
@@ -124,7 +124,7 @@ ReinadoNDT/
 └── README.md
 ```
 
-# 🚀 Cómo Utilizar el Proyecto
+# Cómo Utilizar el Proyecto
 
 Solo necesitas el **JDK 14 o superior**.
 
@@ -145,7 +145,7 @@ Solo necesitas el **JDK 14 o superior**.
     java -cp out reinadondt.Main
     ```
 
-> 💡 El paquete se llama `reinadondt` (en minúsculas) aunque la carpeta sea `reinadoNDT`. Compilar con `-d out` crea la carpeta con el nombre correcto, así que funciona igual en Windows, macOS y Linux.
+> El paquete se llama `reinadondt` (en minúsculas) aunque la carpeta sea `reinadoNDT`. Compilar con `-d out` crea la carpeta con el nombre correcto, así que funciona igual en Windows, macOS y Linux.
 
 <div align="center">
   <p><em>¡Y listo! Ya puedes empezar tu aventura para conquistar el Reinado de NDT.</em></p>
